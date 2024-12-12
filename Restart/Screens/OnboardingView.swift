@@ -72,12 +72,12 @@ struct OnboardingView: View {
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                         .offset(x: 20)
-                    // 3. CAPSULE (DYNAMIC WITH)
+                    // 3. CAPSULE (DYNAMIC WIDTH)
                     
                     HStack {
                         Capsule()
                             .fill(Color("ColorRed"))
-                            .frame(width: 80)
+                            .frame(width: buttonOffset + 80)
                         
                         Spacer()
                     }
