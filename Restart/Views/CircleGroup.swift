@@ -11,6 +11,7 @@ struct CircleGroup: View {
     //MARK: - PROPERTY
     @State var shapeColor: Color
     @State var shapeOpacity: Double
+    @State private var isAnimating: Bool = false
     
     //MARK: - BODY
     var body: some View {
@@ -21,6 +22,13 @@ struct CircleGroup: View {
             Circle()
                 .stroke(shapeColor.opacity(shapeOpacity), lineWidth: 80)
                 .frame(width: 260, height: 260, alignment: .center)
+        } // : ZSTACK
+        .blur(radius: isAnimating ? 1 : 10)
+        .opacity(isAnimating ? 1 : 0)
+        .scaleEffect(isAnimating ? 1 : 0.5)
+        .animation(.easeOut(duration: 1), value: isAnimating)
+        .onAppear {
+            isAnimating = true
         }
     }
 }
