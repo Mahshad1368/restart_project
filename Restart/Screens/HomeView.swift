@@ -37,7 +37,7 @@ struct HomeView: View {
             
             //MARK: - CENTER
             
-            Text("Te time that leads to mastery is dependent on the infinity of our focus.")
+            Text("The time that leads to mastery is dependent on the infinity of our focus.")
                 .font(.title3)
                 .fontWeight(.light)
                 .foregroundColor(.secondary)
@@ -50,6 +50,7 @@ struct HomeView: View {
             
             Button(action: {
                 withAnimation {
+                    playSound(sound: "success", type: "m4a")
                     isOnboardingViewActive = true
                 }
             }) {
